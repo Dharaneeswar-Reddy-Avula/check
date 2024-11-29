@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            mode: 'jit',
+            theme: {
+                extend: {},
+            },
+            variants: {},
+            plugins: [],
+        }
+    </script>
+</head>
+<body class="flex justify-evenly">
+    <div class="side-panel lg:h-[100%] w-[25%] bg-[#ccc] border-[1px] border-[#787878]">
+        <h1 class="text-[30px] font-[600] p-[12px] bg-[#04AA6D]">DASHBOARD</h1>
+        <div class="databases">
+        </div>
+        <div class="Tables">
+        </div>
+        
+      </div>
+    <div class="main-board lg:w-[75%] h-[10vh] w-full ">
+        <div class="tabs bg-[#ccc] w-[100%] flex overflow-hidden ">
+            <button class="tab-btns border-[2px] p-[10px] px-[13px] hover:bg-[black]  hover:text-[white]">Databases</button>
+            <button class="tab-btns border-[2px] p-[10px] px-[13px] hover:bg-[black] hover:text-[white]">SQL</button>
+            <button class="tab-btns border-[2px] p-[10px] px-[13px] hover:bg-[black] hover:text-[white]">Status</button>
+            <button class="tab-btns border-[2px] p-[10px] px-[13px] hover:bg-[black] hover:text-[white]">userAccounts</button>
+            <button class="tab-btns border-[2px] p-[10px] px-[13px] hover:bg-[black] hover:text-[white]">Export</button>
+            <button class="tab-btns border-[2px] p-[10px] px-[13px] hover:bg-[black] hover:text-[white]">Import</button>
+            <button class="tab-btns border-[2px] p-[10px] px-[13px] hover:bg-[black] hover:text-[white]">Settings</button>
+            <button class="tab-btns border-[2px] p-[10px] px-[13px] hover:bg-[black] hover:text-[white]">Replication</button>
+            <button class="tab-btns border-[2px] p-[10px] px-[13px] hover:bg-[black] hover:text-[white]">Variables</button>
+            <button class="tab-btns border-[2px] p-[10px] px-[13px] hover:bg-[black] hover:text-[white]">Charsets</button>
+            <button class="tab-btns border-[2px] p-[10px] px-[13px] hover:bg-[black] hover:text-[white]">Engines</button>
+            <button class="tab-btns border-y-[2px] p-[10px] px-[13px] hover:bg-[black] hover:text-[white]"><i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+        <div class="tab-data w-[100%] h-[92.5vh]">
+        <div id="databases" class="tabcontent w-[100%] h-[100%] hidden py-[16px] px-[12px] bg-[#ccc] relative">
+              <h1>CREATE DATABASE</h1>
+              <input type="text" placeholder="DATABASE NAME" class="dbname p-[10px] lg:w-[250px] rounded-lg outline-[#04AA6D] my-[5px]">
+              <button class="h-[40px] w-[70px] rounded-lg bg-[dodgerblue]" id="create">Create</button>
+              <div class="success hidden h-[50px] w-[500px] bg-[#04AA6D] rounded-lg m-[100px]">
+                <div class="h-[50px] flex justify-center items-center">
+                <span class="suctext text-[20px] text-[white]"></span>
+              </div>
+              </div>
+          </div>
+          <div id="sql" class="tabcontent w-[100%] h-[100%] hidden py-[16px] px-[12px] bg-[#ccc] ">
+            <div class="code h-[100%] w-[100%]">
+              <form class=" h-[100%] w-[100%]">
+                  <fieldset class=" h-[100%] w-[100%]">
+                    <legend class="bg-[gray] rounded-md p-[5px] text-[white] ml-[20px]">WRITE YOUR SQL QUERY</legend>
+                  <textarea class="text-area h-[100%] w-[100%] outline-none "></textarea>
+                  </fieldset>
+            </form>
+            </div>
+           
+          </div>
+          <div id="status" class="tabcontent w-[100%] h-[100%] hidden py-[16px] px-[12px] bg-[white]">
+            <div class="detaills w-[100%] h-[100%] flex justify-center items-center py-[16px] px-[12px]">
+            <h3 class="text-[50px]">NO STATUS FOUND..!</h3>
+          </div>
+          </div>
+          <div id="user-accounts" class="tabcontent w-[100%] h-[100%] hidden py-[16px] px-[12px] bg-[white]">
+            <div class="detaills w-[100%] h-[100%] flex justify-center items-center py-[16px] px-[12px]">
+              <h3 class="text-[50px]">NO ACCOUNTS FOUND..!</h3>
+            </div>
+          </div>
+          <div id="export" class="tabcontent w-[100%] h-[100%] hidden py-[16px] px-[12px] bg-[white]">
+            <h3 class="text-[50px]">EXPORT</h3>
+            
+          </div>
+          <div id="import" class="tabcontent w-[100%] h-[100%] hidden py-[16px] px-[12px] bg-[white]">
+            <h3 class="text-[30px]">Import</h3>
+            <input type="file">
+          </div>
+          <div id="settings" class="tabcontent w-[100%] h-[100%] hidden py-[16px] px-[12px] bg-[white]">
+            <div class="detaills w-[100%] h-[100%] flex justify-center items-center py-[16px] px-[12px]">
+              <h3 class="text-[50px]">Will update later..!</h3>
+            </div>
+          </div>
+          <div id="replication" class="tabcontent w-[100%] h-[100%] hidden py-[16px] px-[12px] bg-[white]">
+            <div class="detaills w-[100%] h-[100%] flex justify-center items-center py-[16px] px-[12px]">
+              <h3 class="text-[50px]">Unable to repllicate</h3>
+            </div>
+          </div>
+          <div id="variables" class="tabcontent w-[100%] h-[100%] hidden py-[16px] px-[12px] bg-[white]">
+            <div class="detaills w-[100%] h-[100%] flex justify-center items-center py-[16px] px-[12px]">
+              <h3 class="text-[50px]">sorry for the inconvinence..!</h3>
+            </div>
+          </div>
+          <div id="charsest" class="tabcontent w-[100%] h-[100%] hidden py-[16px] px-[12px] bg-[white]">
+            <div class="detaills w-[100%] h-[100%] flex justify-center items-center py-[16px] px-[12px]">
+              <h3 class="text-[50px]">Charsets Not availablle..!</h3>
+            </div>
+          </div>
+          <div id="Engines" class="tabcontent w-[100%] h-[100%] hidden py-[16px] px-[12px] bg-[#ccc]">
+            <div class="detaills w-[100%] h-[100%] flex justify-center items-center py-[16px] px-[12px]">
+              <h3 class="text-[50px]">NO Engines FOUND..!</h3>
+            </div>
+          </div>
+          <div id="CREATETABLE" class="tabcontent bg-[#ccc] h-[100%] w-[100%] p-[50px] hidden">
+            <form class="border-[2px]">
+              <fieldset>
+                <legend class="m-[10px] text-[20px] font-[600]">CREATE TABLE</legend>
+              <div class="TABLEDETAILS flex">
+                <div class="table-name flex flex-col m-[10px]">
+                <label for="Table name">Table Name</label>
+                <input type="text" class="table-name-val h-[30px] outline-[#04aa6d] rounded-md" id="firstinput-name">
+              </div>
+              <div class="noofcols flex flex-col m-[10px]">
+                <label for="colums">
+                  No of columns
+                </label>
+                <input type="text" class="tab-col-val h-[30px] px-[5px] outline-[#04aa6d] rounded-md" id="firstinput-col">
+              </div>
+              <button class="tab-create bg-[dodgerblue] h-[30px] w-[80px] m-[30px] rounded-lg">create</button>
+              </div>
+            </fieldset>
+            </form>
+          </div>
+           <div id="TABLECOMP" class="tablecontent hidden bg-[#ccc] h-[100%] w-[100%] p-[50px]">
+            <div class="comp flex">
+              <div class="table-name flex m-[10px]">
+              <label for="Table name">Table Name:</label>
+              <input type="text" class="table-name-val h-[30px] outline-[#04aa6d] rounded-md mx-2" id="secondinput-name">
+            </div>
+            <div class="noofcols flex m-[10px]">
+              <label for="colums">
+                No of columns:
+              </label>
+              <input type="text" class="tab-col-val h-[30px] outline-[#04aa6d] rounded-md mx-2" id="secondinput-col">
+            </div>
+            </div>
+          </div>   
+          
+        </div>
+     
+    <script src="script.js"></script>
+</body>
+</html>
